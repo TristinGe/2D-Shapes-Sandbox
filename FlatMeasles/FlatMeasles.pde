@@ -1,12 +1,44 @@
 //Global Variables
 //
 //Display Geoemtry
-size(); //fullScreen(); displayWidth, displayHeight
+size(600,400); //fullScreen(); displayWidth, displayHeight
+//Landscape, square or portrait
+int appWidth = width, appHeight = height;
+println(width, height, displayWidth, displayHeight); //Verfication of value
+println(appWidth, appHeight); //Verfication of value
 //
 //Display Orientation
+//Purpose: a few comparisions of IFs to ID orientation (similar to image() aspect ratio)
+//Computer tells us the orientation, important for cell phone orientation
+//-tell user specific orientation
+if ( appWidth >= appHeight ) {println("Landscape or Square");} else {println("Portrait");}
+String orientation = (appWidth >= appHeight) ? "Landscape or Square" : "Portrait";
+println("Display Orientation", orientation);
+if (orientation=="Portrait") println("Bru, turn your phone");
 //
 //Variable Populration
 //
-//Face
+//Face: Circle = inscribed in a square
+///Center a circle on display orienttion (landscape)
+//rect();
+//ellipse();
+//
+//Left Eye
+//rect();
+//ellipse();
+//
+//Right Eye
+//rect();
+//ellipse();
+//
+//Nose
+//rect();
+//ellipse();
+//
+//Mouth
+//rect();
+//ellipse();
 //
 //Measle
+//rect();
+//ellipse();
