@@ -1,4 +1,5 @@
 //Global Variables
+float rectFacex, rectFacey, rectFacewidth, rectFaceheight;
 //
 //Display Geoemtry
 size(600,400); //fullScreen(); displayWidth, displayHeight
@@ -11,16 +12,22 @@ println(appWidth, appHeight); //Verfication of value
 //Purpose: a few comparisions of IFs to ID orientation (similar to image() aspect ratio)
 //Computer tells us the orientation, important for cell phone orientation
 //-tell user specific orientation
-if ( appWidth >= appHeight ) {println("Landscape or Square");} else {println("Portrait");}
-String orientation = (appWidth >= appHeight) ? "Landscape or Square" : "Portrait";
-println("Display Orientation", orientation);
-if (orientation=="Portrait") println("Bru, turn your phone");
+//if ( appWidth >= appHeight ) {println("Landscape or Square");} else {println("Portrait");}
+String ls="Landscape or Square", p="Portrait", DO="Display Orientation", instruct="Bru, turn your phone";
+String orientation = (appWidth >= appHeight) ? ls : p;
+println(DO, orientation); //Verification of value
+if (orientation==p) println(instruct);
+//With Strings, easier to print to console or canvas
 //
 //Variable Populration
+rectFacex = ;
+rectFacey = ;
+rectFacewidth = ;
+rectFaceheight = ;
 //
 //Face: Circle = inscribed in a square
 ///Center a circle on display orienttion (landscape)
-//rect();
+rect(rectFacex, rectFacey, rectFacewidth, rectFaceheight);
 //ellipse();
 //
 //Left Eye
