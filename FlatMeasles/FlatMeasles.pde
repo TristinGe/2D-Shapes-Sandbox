@@ -2,6 +2,7 @@
 int smallerGeometryDimension;
 float rectFacex, rectFacey, rectFacewidth, rectFaceheight;
 float faceX, faceY, faceDiameter;
+float leftEyeX, leftEyeY, rightEyeX, rightEyeY, EyeDiameter;
 //
 //Display Geoemtry
 size(600,400); //fullScreen(); displayWidth, displayHeight
@@ -30,6 +31,11 @@ rectFaceheight = smallerGeometryDimension;
 faceX = appWidth*0.5;
 faceY = appHeight*0.5;
 faceDiameter = smallerGeometryDimension;
+leftEyeX = appWidth*0.5 - smallerGeometryDimension*0.25;
+leftEyeY = appHeight*0.5 - smallerGeometryDimension*0.25;
+rightEyeX = appWidth*0.5 + smallerGeometryDimension*0.25;
+rightEyeY = appHeight*0.5 - smallerGeometryDimension*0.25;
+EyeDiameter = smallerGeometryDimension*0.25;
 //
 //Face: Circle = Circle, inscribed in a square
 ///Center a circle on display orienttion (landscape)
@@ -38,11 +44,11 @@ ellipse(faceX, faceY, faceDiameter, faceDiameter);
 //
 //Left Eye
 //rect();
-//ellipse();
+ellipse(leftEyeX, leftEyeY,EyeDiameter,EyeDiameter);
 //
 //Right Eye
 //rect();
-//ellipse();
+ellipse(rightEyeX, rightEyeY, EyeDiameter, EyeDiameter);
 //
 //Nose
 //rect();
