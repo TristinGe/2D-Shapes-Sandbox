@@ -20,10 +20,10 @@ if (orientation==p) println(instruct);
 //With Strings, easier to print to console or canvas
 //
 //Variable Populration
-rectFacex = ;
-rectFacey = ;
-rectFacewidth = ;
-rectFaceheight = ;
+rectFacex = appWidth*0;
+rectFacey = appHeight*0;
+rectFacewidth = appWidth;
+rectFaceheight = appHeight;
 //
 //Face: Circle = inscribed in a square
 ///Center a circle on display orienttion (landscape)
