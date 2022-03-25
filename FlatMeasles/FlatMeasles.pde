@@ -1,5 +1,7 @@
 //Global Variables
+int smallerGeometryDimension;
 float rectFacex, rectFacey, rectFacewidth, rectFaceheight;
+float faceX, faceY, faceDiameter;
 //
 //Display Geoemtry
 size(600,400); //fullScreen(); displayWidth, displayHeight
@@ -20,15 +22,19 @@ if (orientation==p) println(instruct);
 //With Strings, easier to print to console or canvas
 //
 //Variable Populration
-rectFacex = appWidth*0;
+smallerGeometryDimension = appHeight; //user told to turn phone, always landscape or square
+rectFacex =  appWidth*0.5 - smallerGeometryDimension*0.5;
 rectFacey = appHeight*0;
-rectFacewidth = appWidth;
-rectFaceheight = appHeight;
+rectFacewidth = smallerGeometryDimension;
+rectFaceheight = smallerGeometryDimension;
+faceX = appWidth*0.5;
+faceY = appHeight*0.5;
+faceDiameter = smallerGeometryDimension;
 //
-//Face: Circle = inscribed in a square
+//Face: Circle = Circle, inscribed in a square
 ///Center a circle on display orienttion (landscape)
 rect(rectFacex, rectFacey, rectFacewidth, rectFaceheight);
-//ellipse();
+ellipse(faceX, faceY, faceDiameter, faceDiameter);
 //
 //Left Eye
 //rect();
