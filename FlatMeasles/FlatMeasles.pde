@@ -3,6 +3,7 @@ int smallerGeometryDimension;
 float rectFacex, rectFacey, rectFacewidth, rectFaceheight;
 float faceX, faceY, faceDiameter;
 float leftEyeX, leftEyeY, rightEyeX, rightEyeY, EyeDiameter;
+float mouthX1, mouthY1, mouthX2, mouthY2;
 //
 //Display Geoemtry
 size(600,400); //fullScreen(); displayWidth, displayHeight
@@ -31,11 +32,15 @@ rectFaceheight = smallerGeometryDimension;
 faceX = appWidth*0.5;
 faceY = appHeight*0.5;
 faceDiameter = smallerGeometryDimension;
-leftEyeX = appWidth*0.5 - smallerGeometryDimension*0.25;
+leftEyeX = appWidth*0.5 - smallerGeometryDimension*1/4.9;
 leftEyeY = appHeight*0.5 - smallerGeometryDimension*0.25;
-rightEyeX = appWidth*0.5 + smallerGeometryDimension*0.25;
-rightEyeY = appHeight*0.5 - smallerGeometryDimension*0.25;
+rightEyeX = appWidth*0.5 + smallerGeometryDimension*1/4.9;
+rightEyeY = leftEyeY;
 EyeDiameter = smallerGeometryDimension*0.25;
+mouthX1 = leftEyeX;
+mouthY1 = appHeight*3/4;
+mouthX2 = rightEyeX;
+mouthY2 = mouthY1;
 //
 //Face: Circle = Circle, inscribed in a square
 ///Center a circle on display orienttion (landscape)
@@ -56,7 +61,7 @@ ellipse(rightEyeX, rightEyeY, EyeDiameter, EyeDiameter);
 //
 //Mouth
 //rect();
-//ellipse();
+line(mouthX1, mouthY1, mouthX2, mouthY2);
 //
 //Measle
 //rect();
