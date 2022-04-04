@@ -3,7 +3,8 @@ int smallerGeometryDimension;
 float rectFacex, rectFacey, rectFacewidth, rectFaceheight;
 float faceX, faceY, faceDiameter;
 float leftEyeX, leftEyeY, rightEyeX, rightEyeY, EyeDiameter;
-float mouthX1, mouthY1, mouthX2, mouthY2;
+float mouthX1, mouthY1, mouthX2, mouthY2, mouthOpen, reset;
+float noseX1, noseY1, noseX2, noseY2, noseX3, noseY3;
 //
 //Display Geoemtry
 size(600,400); //fullScreen(); displayWidth, displayHeight
@@ -38,9 +39,17 @@ rightEyeX = appWidth*0.5 + smallerGeometryDimension*1/4.9;
 rightEyeY = leftEyeY;
 EyeDiameter = smallerGeometryDimension*0.25;
 mouthX1 = leftEyeX;
-mouthY1 = appHeight*3/4;
+mouthY1 = appHeight*5/8;
 mouthX2 = rightEyeX;
 mouthY2 = mouthY1;
+mouthOpen = smallerGeometryDimension*1/4;
+reset = 1;
+noseX1 = ;
+noseY1 = ;
+noseX2 = ;
+noseY2 = ;
+noseX3 = ;
+noseY3 = ;
 //
 //Face: Circle = Circle, inscribed in a square
 ///Center a circle on display orienttion (landscape)
@@ -57,11 +66,13 @@ ellipse(rightEyeX, rightEyeY, EyeDiameter, EyeDiameter);
 //
 //Nose
 //rect();
-//ellipse();
+triangle(noseX1, noseY1, noseX2, noseY2, noseX3, noseY3);
 //
 //Mouth
 //rect();
-line(mouthX1, mouthY1, mouthX2, mouthY2);
+strokeWeight(mouthOpen);
+line(mouthX1, mouthY1, mouthX2, mouthY2); // Notice the End CAPS
+strokeWeight(reset); //reset to 1 pixel
 //
 //Measle
 //rect();
