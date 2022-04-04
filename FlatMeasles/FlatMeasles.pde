@@ -39,17 +39,17 @@ rightEyeX = appWidth*0.5 + smallerGeometryDimension*1/4.9;
 rightEyeY = leftEyeY;
 EyeDiameter = smallerGeometryDimension*0.25;
 mouthX1 = leftEyeX;
-mouthY1 = appHeight*5/8;
+mouthY1 = appHeight*6/8;
 mouthX2 = rightEyeX;
 mouthY2 = mouthY1;
 mouthOpen = smallerGeometryDimension*1/4;
 reset = 1;
-noseX1 = ;
-noseY1 = ;
-noseX2 = ;
-noseY2 = ;
-noseX3 = ;
-noseY3 = ;
+noseX1 = appWidth/2;
+noseY1 = leftEyeY;
+noseX2 = noseX1 - leftEyeY/2;
+noseY2 = faceY;
+noseX3 = noseX1 + rightEyeY/2;
+noseY3 = noseY2;
 //
 //Face: Circle = Circle, inscribed in a square
 ///Center a circle on display orienttion (landscape)
@@ -75,5 +75,10 @@ line(mouthX1, mouthY1, mouthX2, mouthY2); // Notice the End CAPS
 strokeWeight(reset); //reset to 1 pixel
 //
 //Measle
+float measleX = random(appWidth*0, appWidth);
+float measleY = random(appHeight*0, appHeight);
+float measleDiameter = smallerGeometryDimension/25;
+color red =#FF0000, measleColour=red;
 //rect();
-//ellipse();
+fill(measleColour);
+ellipse(measleX, measleY, measleDiameter, measleDiameter);
