@@ -26,6 +26,7 @@ if (orientation==p) println(instruct);
 //
 //Variable Populration
 smallerGeometryDimension = appHeight; //user told to turn phone, always landscape or square
+reset = smallerGeometryDimension/smallerGeometryDimension; // returns "1" //default value for resetting parameters
 rectFacex =  appWidth*0.5 - smallerGeometryDimension*0.5;
 rectFacey = appHeight*0;
 rectFacewidth = smallerGeometryDimension;
@@ -43,7 +44,6 @@ mouthY1 = appHeight*6/8;
 mouthX2 = rightEyeX;
 mouthY2 = mouthY1;
 mouthOpen = smallerGeometryDimension*1/4;
-reset = 1;
 noseX1 = appWidth/2;
 noseY1 = leftEyeY;
 noseX2 = noseX1 - leftEyeY/2;
@@ -75,10 +75,17 @@ line(mouthX1, mouthY1, mouthX2, mouthY2); // Notice the End CAPS
 strokeWeight(reset); //reset to 1 pixel
 //
 //Measle
-float measleX = random(appWidth*0, appWidth);
-float measleY = random(appHeight*0, appHeight);
-float measleDiameter = smallerGeometryDimension/25;
-color red =#FF0000, measleColour=red;
+float measleDiameter = random(smallerGeometryDimension/100,smallerGeometryDimension/25);
+float measleRadius = measleDiameter/2;
+float measleX = random(rectFacex+measleRadius, rectFacex+rectFacewidth-measleRadius);
+float measleY = random(appHeight*0+measleRadius, appHeight-measleRadius);
+Boolean nightMode=false; 
+//color red =#FF0000, measleColour=red;
+color measleColour = ( nightMode==false ) ? color(255, random(0,50), random(120)) : color(255, random(0,50), random(120)); //ternaty operator for day:night
+color whiteReset=#000000;
 //rect();
+noStroke();
 fill(measleColour);
 ellipse(measleX, measleY, measleDiameter, measleDiameter);
+stroke(reset); //reset to 1 pixel
+fill(whiteReset); //reset to first colour (i.e. blackReset)
