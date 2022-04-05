@@ -84,6 +84,7 @@ Boolean nightMode=false;
 color measleColour = ( nightMode==false ) ? color(255, random(0,50), random(120)) : color(255, random(0,50), random(120)); //ternaty operator for day:night
 color whiteReset=#000000;
 //rect();
+//random valuse returns
 noStroke();
 fill(measleColour);
 ellipse(measleX, measleY, measleDiameter, measleDiameter);
