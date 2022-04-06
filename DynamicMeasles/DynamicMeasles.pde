@@ -83,6 +83,8 @@ void draw()
   stroke(reset); //reset to 1 pixel
   fill(whiteReset); //reset to first colour (i.e. blackReset)
   //
+  rect(rectFacex, rectFacey, rectFacewidth, rectFaceheight);
+  ellipse(faceX, faceY, faceDiameter, faceDiameter);
   //Left Eye
   //rect();
   ellipse(leftEyeX, leftEyeY, EyeDiameter, EyeDiameter);
@@ -106,6 +108,7 @@ void draw()
   //comparison rect() line only, no caps, no strokeWeight
   //rect(mouthX1, mouthY1, mouthWidth, mouthHeight);
   //
+
 }//End draw
 //
 void keyPressed() {
