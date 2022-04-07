@@ -1,12 +1,5 @@
 //Global Variables
-int appWidth, appHeight;
-//
-int smallerGeometryDimension, reset;
-float rectFacex, rectFacey, rectFacewidth, rectFaceheight;
-float faceX, faceY, faceDiameter;
-float leftEyeX, leftEyeY, rightEyeX, rightEyeY, EyeDiameter;
-float mouthX1, mouthY1, mouthX2, mouthY2, mouthOpen;
-float noseX1, noseY1, noseX2, noseY2, noseX3, noseY3;
+float EyeDiameter;
 //
 void setup() 
 {

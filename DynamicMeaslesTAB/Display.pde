@@ -1,6 +1,9 @@
+//Global Variables
+int appWidth, appHeight;
+//
 void display() 
 {
-    appWidth = width; //Swap with displayWidth, displayHeight for testing
+  appWidth = width; //Swap with displayWidth, displayHeight for testing
   appHeight = height;
   println(width, height, displayWidth, displayHeight); //Verfication of value
   println(appWidth, appHeight); //Verfication of value

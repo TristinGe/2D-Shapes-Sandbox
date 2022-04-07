@@ -1,3 +1,6 @@
+//Global Variables
+int smallerGeometryDimension, reset;
+//
 void population() 
 {
   //Variable Populration
