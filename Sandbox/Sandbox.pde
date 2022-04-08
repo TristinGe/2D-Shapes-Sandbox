@@ -1,55 +1,45 @@
-int numSegments   = 10000;
 float radius      = 200;
-float slope;
-
-PVector[] vectors = new PVector[numSegments];
-
-void setup() {
-  size(600, 400);
+void setup() 
+{
+size(600,400);
   smooth();
-  noLoop();
+  //noLoop();
   
   // Get circle vertices
-  float k = TWO_PI / (float)numSegments;
-  for ( int i = 0; i < numSegments; i++ ) {
-    float x = cos(k*i) * radius;
+  float k = TWO_PI / (float)numSegments; //two pie
+  for ( int i = 0; i < numSegments; i=i+1 ) {
+    float x = cos(k*i) * radius;//Find the starting coordinates
     float y = sin(k*i) * radius;
-   vectors[i] = new PVector(x, y);
+     vectors[i] = new PVector(x, y);
+     println(x);
+     println(y);
+         println(vectors[i]);
   }
-}
-
-
-void draw() {
+}//End circlesetup
+//Global Variables
+int numSegments   = 5;
+PVector[] vectors = new PVector[numSegments];
+//
+void draw() 
+{
   //background(255);
-  
+
   // Draw circle
   pushMatrix();
   translate( width/2, height/2 );
-  
-  for ( int i = 0; i < numSegments; i++ ) {
-    float x = vectors[i].x;
-    float y = vectors[i].y;
-    float x1 = (i < numSegments-1) ? vectors[i+1].x : vectors[0].x;
-    float y1 = (i < numSegments-1) ? vectors[i+1].y : vectors[0].y;
-    stroke(0); noFill();
-    strokeWeight(2);
-    line(x, y, x1, y1);
-    
-    strokeWeight(1);
-    stroke(127);
-    //line(0, 0, x, y);
-    
+
+  for ( int i = 0; i < numSegments; i=i+1 ) {
+
     // Draw tangent lines
-    PVector tl = new PVector( -vectors[i].y, vectors[i].x );
-    tl.mult(0.5f);
+    PVector tl = new PVector(-vectors[i].y, vectors[i].x );//
+    tl.mult(5);
     stroke(0, 0, 0);
-    line(vectors[i].x, vectors[i].y, vectors[i].x - 4*tl.x, vectors[i].y - 4*tl.y);
-    line(vectors[i].x, vectors[i].y, vectors[i].x + 4*tl.x, vectors[i].y + 4*tl.y);
-    fill(127);
-    textAlign(CENTER);
-    //text("V" + i, x * 1.2, y * 1.2 + 5);
+    line(vectors[i].x, vectors[i].y, vectors[i].x - tl.x, vectors[i].y - tl.y);
+    line(vectors[i].x, vectors[i].y, vectors[i].x + tl.x, vectors[i].y + tl.y);
+    fill(255);
+  
   }
-  
+
   popMatrix();
-  
-}
+  //
+}//End circle
