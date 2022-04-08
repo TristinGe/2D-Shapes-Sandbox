@@ -1,4 +1,5 @@
 //Global Variables
+//
 int appWidth, appHeight;
 //
 int smallerGeometryDimension, reset;
@@ -66,6 +67,7 @@ void setup()
 void draw() 
 {
   measles();
+  circleDraw();
   //Left Eye
   //rect();
   ellipse(leftEyeX, leftEyeY, EyeDiameter, EyeDiameter);
@@ -80,8 +82,8 @@ void draw()
   //
   //Mouth
   //rect();
-  int mouthWidth = int ( mouthX2 - mouthX1 ); //length=end-beginning
-  int mouthHeight = int ( mouthOpen );
+  //int mouthWidth = int ( mouthX2 - mouthX1 ); //length=end-beginning
+  //int mouthHeight = int ( mouthOpen );
   //rect(mouthX1-mouthHeight*1/2, mouthY1-mouthHeight*1/2, mouthWidth+mouthOpen, mouthHeight);
   strokeWeight(mouthOpen);
   line( mouthX1, mouthY1, mouthX2, mouthY2 ); //Notice the END CAPS
